@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user profile page</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>postname</td>
+    </tr>
+    <tr th:each="post : ${posts}">
+        <td>
+            <a th:href="@{/post/detail/{postIdx}(postIdx=${post.id})}" th:text="${post.title} "></a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
